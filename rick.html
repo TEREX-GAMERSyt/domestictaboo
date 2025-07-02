@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Secure File Access</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d1117;
+      color: #c9d1d9;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .terminal {
+      background: #161b22;
+      padding: 20px 30px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 1rem;
+      color: #58a6ff;
+      margin-bottom: 20px;
+      min-height: 100px;
+      width: 90%;
+      max-width: 700px;
+      white-space: pre-wrap;
+      text-align: left;
+      box-shadow: 0 0 10px #000;
+    }
+
+    iframe {
+      display: none;
+      margin-top: 30px;
+      width: 90%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00f;
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal" id="terminal"></div>
+
+  <iframe
+    id="rick"
+   src="https://gamingfun.me/LKF49R.rickroll"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+  ></iframe>
+
+  <script>
+    const terminal = document.getElementById('terminal');
+    const messages = [
+      'Initializing secure session...',
+      'Decrypting file header...',
+      'Verifying user credentials...',
+      'Loading secure modules...',
+      'Fetching access token...',
+      'Token accepted ✓',
+      'Preparing secure file...'
+    ];
+
+    let index = 0;
+
+    function typeNextLine() {
+      if (index < messages.length) {
+        terminal.innerHTML += messages[index] + '\n';
+        index++;
+        setTimeout(typeNextLine, 800);
+      } else {
+        terminal.innerHTML += '\nDownload initialized...\n';
+        setTimeout(() => {
+          document.getElementById('rick').style.display = 'block';
+        }, 1000);
+      }
+    }
+
+    typeNextLine();
+  </script>
+</body>
+</html>
